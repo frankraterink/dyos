@@ -2,8 +2,6 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -25,7 +23,7 @@
 
 .site-nav {
     float: right;
-    line-height: 56px;
+    line-height: 30px;
 
     .menu-icon {
         display: none;
@@ -36,54 +34,11 @@
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
+        &:not(:last-child) {
+            margin-right: 20px;
         }
     }
 
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
 }
 
 
@@ -94,6 +49,18 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    ul {
+      margin: 0;
+      text-align: center;
+      font-size: $font-size-s;
+      li {
+        list-style-type: none;
+        display: inline;
+        &:not(:last-child) {
+          margin-right: $gutter-m;
+        }
+      }
+    }
 }
 
 .footer-heading {
@@ -233,4 +200,127 @@
             font-size: 18px;
         }
     }
+}
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .box {
+    &.box-logo {
+      flex: 1 1 250px;
+    }
+    &.box-nav {
+      flex: 1 1 400px;
+    }
+  }
+}
+
+.grid {
+  margin-bottom: 100px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 233.333333333px;
+}
+
+
+.gutter-sizer {
+  width: 20px;
+}
+
+.grid-item {
+  height: 305px;
+  float: left;
+  background: #fff;
+  margin-bottom: 20px;
+  color: #696969;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0px 11px 20px -6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  text-align: right;
+  &.revival {
+    figure {
+      &:after  {
+        content: '';
+        width: 75px;
+        height: 57px;
+        position: absolute;
+        bottom: -7px;
+        left: -16px;
+        background-image: url(/img/revival.png);
+        background-size: cover;
+      }
+    }
+  }
+  figure {
+    width: 90%;
+    padding: 5%;
+    margin: 0;
+    position: relative;
+    img {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    figcaption {
+      font-size: $font-size-l;
+      padding-left: 20%;
+    }
+
+  }
+  p {
+    display: none;
+    font-style: italic;
+  }
+}
+
+/* default is square */
+
+.grid-item-regular-landscape {
+  height: 200px;
+}
+
+.grid-item-large,
+.grid-item-highlight {
+  width:  486.6666667px;
+  height: 670px;
+  figure {
+    width: 90%;
+    padding: 5%;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    display: block;
+    margin: 0 5% 10px;
+  }
+  &.revival {
+    figure {
+      &:after  {
+        width: 105px;
+        height: 79px;
+        bottom: -14px;
+        left: -16px;
+      }
+    }
+  }
+}
+
+.grid-item-highlight {
+  background-color: #FF7E56;
+  cursor: default;
+  color: #fff;
 }

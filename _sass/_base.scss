@@ -15,12 +15,13 @@ dl, dd, ol, ul, figure {
  */
 body {
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    font-size: $font-size-m;
     line-height: $base-line-height;
     font-weight: 300;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    background: linear-gradient(90deg, rgba(245, 245, 245, 0.92) 0%, rgba(245, 245, 245, 0.86) 70%), url(/img/diamonds.png) repeat;
 }
 
 
